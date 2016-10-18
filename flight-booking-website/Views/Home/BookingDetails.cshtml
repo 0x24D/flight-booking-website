@@ -1,0 +1,129 @@
+﻿@model flight_booking_website.Models.BookingsTbl
+
+@{
+    ViewBag.Title = "BookingDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <h2>Booking Details</h2>
+
+    <div class="display-label">
+         <u>Outbound Departure Airport</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Outbound_Departure_Airport)
+    </div>
+
+    <div class="display-label">
+         <u>Outbound Departure Time</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Outbound_Departure_Time)
+    </div>
+
+    <div class="display-label">
+         <u>Outbound Arrival Airport</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Outbound_Arrival_Airport)
+    </div>
+
+    <div class="display-label">
+         <u>Outbound Arrival Time</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Outbound_Arrival_Time)
+    </div>
+    ---
+    <div class="display-label">
+         <u>Return Departure Airport</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Return_Departure_Airport)
+    </div>
+
+    <div class="display-label">
+         <u>Return Departure Time</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Return_Departure_Time)
+    </div>
+
+    <div class="display-label">
+         <u>Return Arrival Airport</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Return_Arrival_Airport)
+    </div>
+
+    <div class="display-label">
+         <u>Return Arrival Time</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Return_Arrival_Time)
+    </div>
+    ---
+    <div class="display-label">
+         <u>Name</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         <u>Age</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Age)
+    </div>
+
+    <div class="display-label">
+         <u>Phone Number</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Number)
+    </div>
+
+    <div class="display-label">
+        <u>Mobile Number</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Mobile_Number)
+    </div>
+
+    <div class="display-label">
+         <u>Email Address</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email_Address)
+    </div>
+
+    <div class="display-label">
+         <u>Number of Passengers</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Number_of_Passengers)
+    </div>
+
+    <div class="display-label">
+         <u>Passenger 1 Age</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Passenger_1_Age)
+    </div>
+
+    <div class="display-label">
+         <u>Passenger 2 Age</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Passenger_2_Age)
+    </div>
+
+    <div class="display-label">
+         <u>Passenger 3 Age</u>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Passenger_3_Age)
+    </div>
+<p>
+    @Html.ActionLink("Back to List", "Bookings")
+</p>

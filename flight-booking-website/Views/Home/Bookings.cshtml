@@ -1,0 +1,74 @@
+﻿@model IEnumerable<flight_booking_website.Models.BookingsTbl>
+
+@{
+    ViewBag.Title = "Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Bookings</h2>
+@if (Request.IsAuthenticated)
+{
+    @Html.ActionLink("Create New", "CreateBooking")
+    <span>|</span>
+    @Html.ActionLink("Delete", "DeleteBooking", "Home")
+}
+<table>
+    <tr>
+        <th>
+            Booking ID
+        </th>
+        <th>
+            Outbound Flight
+        </th>
+        <th>
+            Return Flight
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Email Address
+        </th>
+        <th>
+            Number of Passengers
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Outbound_Departure_Airport) - @Html.DisplayFor(modelItem => item.Outbound_Arrival_Airport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Return_Departure_Airport) - @Html.DisplayFor(modelItem => item.Return_Arrival_Airport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number_of_Passengers)
+            </td>
+            <td>
+                @if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("Details", "BookingDetails", new { id = item.Id })
+                    <span>|</span>
+                    @Html.ActionLink("Edit", "EditBooking", new { id = item.Id })
+                }
+                else
+                {
+                   @Html.ActionLink("Details", "BookingDetails", new { id = item.Id })
+                }
+                
+                
+            </td>
+        </tr>
+    }
+</table>

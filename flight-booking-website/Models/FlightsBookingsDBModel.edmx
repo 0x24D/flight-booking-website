@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FlightsDBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="BookingsTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Outbound Departure Airport" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Outbound Departure Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Outbound Arrival Airport" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Outbound Arrival Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Return Departure Airport" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Return Departure Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Return Arrival Airport" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Return Arrival Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Phone Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mobile Number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Number of Passengers" Type="int" Nullable="false" />
+          <Property Name="Passenger 1 Age" Type="int" />
+          <Property Name="Passenger 2 Age" Type="int" />
+          <Property Name="Passenger 3 Age" Type="int" />
+        </EntityType>
+        <EntityType Name="FlightsTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Departure Airport" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Departure Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Arrival Airport" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Arrival Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersTbl">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password Salt" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FlightsDBModel1StoreContainer">
+          <EntitySet Name="BookingsTbl" EntityType="Self.BookingsTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FlightsTbl" EntityType="Self.FlightsTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersTbl" EntityType="Self.UsersTbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FlightsDBModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="BookingsTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Outbound_Departure_Airport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Outbound_Departure_Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="Outbound_Arrival_Airport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Outbound_Arrival_Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="Return_Departure_Airport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Return_Departure_Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="Return_Arrival_Airport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Return_Arrival_Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Phone_Number" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email_Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number_of_Passengers" Type="Int32" Nullable="false" />
+          <Property Name="Passenger_1_Age" Type="Int32" />
+          <Property Name="Passenger_2_Age" Type="Int32" />
+          <Property Name="Passenger_3_Age" Type="Int32" />
+          <Property Name="Mobile_Number" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FlightsTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Departure_Airport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Departure_Time" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Arrival_Airport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Arrival_Time" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="FlightsBookingsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookingsTbls" EntityType="Self.BookingsTbl" />
+          <EntitySet Name="FlightsTbls" EntityType="Self.FlightsTbl" />
+          <EntitySet Name="UsersTbls" EntityType="FlightsDBModel1.UsersTbl" />
+        </EntityContainer>
+        <EntityType Name="UsersTbl">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password_Salt" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FlightsDBModel1StoreContainer" CdmEntityContainer="FlightsBookingsDBEntities">
+          <EntitySetMapping Name="BookingsTbls">
+            <EntityTypeMapping TypeName="FlightsDBModel1.BookingsTbl">
+              <MappingFragment StoreEntitySet="BookingsTbl">
+                <ScalarProperty Name="Mobile_Number" ColumnName="Mobile Number" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Outbound_Departure_Airport" ColumnName="Outbound Departure Airport" />
+                <ScalarProperty Name="Outbound_Departure_Time" ColumnName="Outbound Departure Time" />
+                <ScalarProperty Name="Outbound_Arrival_Airport" ColumnName="Outbound Arrival Airport" />
+                <ScalarProperty Name="Outbound_Arrival_Time" ColumnName="Outbound Arrival Time" />
+                <ScalarProperty Name="Return_Departure_Airport" ColumnName="Return Departure Airport" />
+                <ScalarProperty Name="Return_Departure_Time" ColumnName="Return Departure Time" />
+                <ScalarProperty Name="Return_Arrival_Airport" ColumnName="Return Arrival Airport" />
+                <ScalarProperty Name="Return_Arrival_Time" ColumnName="Return Arrival Time" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone Number" />
+                <ScalarProperty Name="Email_Address" ColumnName="Email Address" />
+                <ScalarProperty Name="Number_of_Passengers" ColumnName="Number of Passengers" />
+                <ScalarProperty Name="Passenger_1_Age" ColumnName="Passenger 1 Age" />
+                <ScalarProperty Name="Passenger_2_Age" ColumnName="Passenger 2 Age" />
+                <ScalarProperty Name="Passenger_3_Age" ColumnName="Passenger 3 Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlightsTbls">
+            <EntityTypeMapping TypeName="FlightsDBModel1.FlightsTbl">
+              <MappingFragment StoreEntitySet="FlightsTbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Departure_Airport" ColumnName="Departure Airport" />
+                <ScalarProperty Name="Departure_Time" ColumnName="Departure Time" />
+                <ScalarProperty Name="Arrival_Airport" ColumnName="Arrival Airport" />
+                <ScalarProperty Name="Arrival_Time" ColumnName="Arrival Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersTbls">
+            <EntityTypeMapping TypeName="FlightsDBModel1.UsersTbl">
+              <MappingFragment StoreEntitySet="UsersTbl">
+                <ScalarProperty Name="Password_Salt" ColumnName="Password Salt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

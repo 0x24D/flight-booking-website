@@ -1,0 +1,150 @@
+﻿@model flight_booking_website.Models.BookingsTbl
+
+@{
+    ViewBag.Title = "EditBooking";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    List<flight_booking_website.Models.BookingsTbl> outDepAirports = ViewBag.outDepAirports;
+    List<flight_booking_website.Models.BookingsTbl> retArrAirports = ViewBag.retArrAirports;
+    List<flight_booking_website.Models.BookingsTbl> retDepAirports = ViewBag.retDepAirports;
+    List<flight_booking_website.Models.BookingsTbl> outArrAirports = ViewBag.outArrAirports;
+    List<flight_booking_website.Models.BookingsTbl> outDepTimes = ViewBag.outDepTimes;
+    List<flight_booking_website.Models.BookingsTbl> retArrTimes = ViewBag.retArrTimes;
+    List<flight_booking_website.Models.BookingsTbl> retDepTimes = ViewBag.retDepTimes;
+    List<flight_booking_website.Models.BookingsTbl> outArrTimes = ViewBag.outArrTimes;
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        <h2>Edit a Booking</h2>
+        @Html.HiddenFor(model => model.Id)
+        <div class="editor-label">
+            Outbound Departure Airport
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Outbound_Departure_Airport, new SelectList(outDepAirports, "Outbound_Departure_Airport", "Outbound_Departure_Airport"))
+        </div>
+        <div class="editor-label">
+            Outbound Departure Time
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Outbound_Departure_Time, new SelectList(outDepTimes, "Outbound_Departure_Time", "Outbound_Departure_Time"))
+        </div>
+        <div class="editor-label">
+            Outbound Arrival Airport
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Outbound_Arrival_Airport, new SelectList(outArrAirports, "Outbound_Arrival_Airport", "Outbound_Arrival_Airport"))
+        </div>
+        <div class="editor-label">
+            Outbound Arrival Time
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Outbound_Arrival_Time, new SelectList(outArrTimes, "Outbound_Arrival_Time", "Outbound_Arrival_Time"))
+        </div>
+        <div class="editor-label">
+            Return Departure Airport
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Return_Departure_Airport, new SelectList(retDepAirports, "Return_Departure_Airport", "Return_Departure_Airport"))
+
+        </div>
+        <div class="editor-label">
+            Return Departure Time
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Return_Departure_Time, new SelectList(retDepTimes, "Return_Departure_Time", "Return_Departure_Time"))
+        </div>
+        <div class="editor-label">
+            Return Arrival Airport
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Return_Arrival_Airport, new SelectList(retArrAirports, "Return_Arrival_Airport", "Return_Arrival_Airport"))
+        </div>
+        <div class="editor-label">
+            Return Arrival Time
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Return_Arrival_Time, new SelectList(retArrTimes, "Return_Arrival_Time", "Return_Arrival_Time"))
+        </div>
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            Age
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Age)
+            @Html.ValidationMessageFor(model => model.Age)
+        </div>
+
+        <div class="editor-label">
+            Phone Number
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone_Number)
+            @Html.ValidationMessageFor(model => model.Phone_Number)
+        </div>
+        <div class="editor-label">
+            Mobile Number
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mobile_Number)
+            @Html.ValidationMessageFor(model => model.Mobile_Number)
+        </div>
+        <div class="editor-label">
+            Email Address
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email_Address)
+            @Html.ValidationMessageFor(model => model.Email_Address)
+        </div>
+
+        <div class="editor-label">
+            Number of Passengers
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Number_of_Passengers)
+            @Html.ValidationMessageFor(model => model.Number_of_Passengers)
+        </div>
+
+        <div class="editor-label">
+            Passenger 1 Age
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Passenger_1_Age)
+            @Html.ValidationMessageFor(model => model.Passenger_1_Age)
+        </div>
+
+        <div class="editor-label">
+            Passenger 2 Age
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Passenger_2_Age)
+            @Html.ValidationMessageFor(model => model.Passenger_2_Age)
+        </div>
+
+        <div class="editor-label">
+            Passenger 3 Age
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Passenger_3_Age)
+            @Html.ValidationMessageFor(model => model.Passenger_3_Age)
+        </div>
+        <p>
+            <input type="submit" value="Edit Booking" />
+        </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Bookings")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

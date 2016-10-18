@@ -1,0 +1,94 @@
+﻿@model IEnumerable<flight_booking_website.Models.BookingsTbl>
+
+@{
+    ViewBag.Title = "DeleteBooking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Delete a Booking</h2>
+@using (Html.BeginForm("DeleteBooking", "Home", FormMethod.Post))
+{
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Select
+                </th>
+                <th>
+                    Booking ID
+                </th>
+                <th>
+                    Outbound Flight ID
+                </th>
+                <th>
+                    Outbound Departure Airport
+                </th>
+                <th>
+                    Outbound Departure Time
+                </th>
+                <th>
+                    Outbound Arrival Airport
+                </th>
+                <th>
+                    Outbound Arrival Time
+                </th>
+                <th>
+                    Outbound Flight Length
+                </th>
+                <th>
+                    Return Flight ID
+                </th>
+                <th>
+                    Return Departure Airport
+                </th>
+                <th>
+                    Return Departure Time
+                </th>
+                <th>
+                    Return Arrival Airport
+                </th>
+                <th>
+                    Return Arrival Time
+                </th>
+                <th>
+                    Return Flight Length
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Age
+                </th>
+                <th>
+                    Phone Number
+                </th>
+                <th>
+                    Mobile Number
+                </th>
+                <th>
+                    Email Address
+                </th>
+                <th>
+                    Number of Passengers
+                </th>
+                <th>
+                    Passenger 1 Age
+                </th>
+                <th>
+                    Passenger 2 Age
+                </th>
+                <th>
+                    Passenger 3 Age
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @Html.EditorForModel()
+        </tbody>
+    </table>
+    <p>
+    <input type="submit" value="Delete selected booking(s)" />
+    </p>
+    <div>
+        @Html.ActionLink("Back to List", "Bookings")
+    </div>
+}

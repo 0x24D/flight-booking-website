@@ -1,0 +1,35 @@
+﻿@model IEnumerable<flight_booking_website.Models.FlightsTbl>
+
+@{
+    ViewBag.Title = "Flights";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Flights</h2>
+<table>
+    <tr>
+        <th>Departure Airport</th>
+        <th>Departure Time</th>
+        <th>Arrival Airport</th>
+        <th>Arrival Time</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_Airport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure_Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival_Airport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival_Time)
+            </td>
+        </tr>
+    }
+
+</table>
